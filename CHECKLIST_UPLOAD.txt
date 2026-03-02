@@ -1,0 +1,175 @@
+================================================================================
+           ✅ CHECKLIST UPLOAD KE INFINITYFREE - PRINT & IKUTI
+================================================================================
+
+📋 PERSIAPAN:
+[ ] Folder perpus sudah di-zip menjadi perpus.zip
+[ ] File database.sql sudah siap
+[ ] Email aktif untuk daftar
+[ ] Browser sudah terbuka
+[ ] Koneksi internet stabil
+
+================================================================================
+
+🎯 LANGKAH 1: DAFTAR INFINITYFREE (5 menit)
+
+[ ] 1. Buka https://www.infinityfree.net
+[ ] 2. Klik "Sign Up"
+[ ] 3. Isi email & password
+[ ] 4. Verifikasi email
+[ ] 5. Login ke Client Area
+
+================================================================================
+
+🎯 LANGKAH 2: BUAT HOSTING (3 menit)
+
+[ ] 1. Klik "Create Account"
+[ ] 2. Pilih "Use a subdomain"
+[ ] 3. Isi subdomain: _________________.infinityfreeapp.com
+[ ] 4. Klik "Create Account"
+[ ] 5. Tunggu 2-5 menit sampai Active
+
+================================================================================
+
+🎯 LANGKAH 3: UPLOAD FILE (10 menit)
+
+[ ] 1. Buka cPanel
+[ ] 2. Klik "Online File Manager"
+[ ] 3. Masuk folder "htdocs"
+[ ] 4. Upload perpus.zip
+[ ] 5. Extract perpus.zip
+[ ] 6. Hapus perpus.zip (opsional)
+
+================================================================================
+
+🎯 LANGKAH 4: PINDAHKAN PUBLIC (5 menit)
+
+[ ] 1. Masuk folder perpus/public
+[ ] 2. Select All (Ctrl+A)
+[ ] 3. Move ke /htdocs/
+[ ] 4. Kembali ke htdocs
+[ ] 5. Edit index.php:
+       Ubah: __DIR__.'/../vendor/autoload.php'
+       Jadi: __DIR__.'/perpus/vendor/autoload.php'
+       
+       Ubah: __DIR__.'/../bootstrap/app.php'
+       Jadi: __DIR__.'/perpus/bootstrap/app.php'
+[ ] 6. Save Changes
+
+================================================================================
+
+🎯 LANGKAH 5: SETUP DATABASE (5 menit)
+
+[ ] 1. Buka "MySQL Databases"
+[ ] 2. Create Database: perpus_app
+       Catat: if______perpus_app
+[ ] 3. Create User: perpus_user
+       Catat: if______perpus_user
+       Catat Password: _________________________________
+[ ] 4. Add User to Database
+[ ] 5. Grant ALL PRIVILEGES
+
+📝 INFO DATABASE (CATAT DI SINI):
+   Host: sql___.infinityfree.net
+   Database: if______perpus_app
+   Username: if______perpus_user
+   Password: _________________________________
+
+================================================================================
+
+🎯 LANGKAH 6: IMPORT DATABASE (3 menit)
+
+[ ] 1. Buka phpMyAdmin
+[ ] 2. Pilih database if______perpus_app
+[ ] 3. Tab "Import"
+[ ] 4. Choose File: database.sql
+[ ] 5. Klik "Go"
+[ ] 6. Tunggu sukses
+
+================================================================================
+
+🎯 LANGKAH 7: SETUP .ENV (5 menit)
+
+[ ] 1. File Manager → perpus
+[ ] 2. Copy .env.example → .env
+[ ] 3. Edit .env
+[ ] 4. Update:
+       APP_ENV=production
+       APP_DEBUG=false
+       APP_URL=https://_________.infinityfreeapp.com
+       
+       DB_HOST=sql___.infinityfree.net
+       DB_DATABASE=if______perpus_app
+       DB_USERNAME=if______perpus_user
+       DB_PASSWORD=_________________________________
+       
+[ ] 5. Generate APP_KEY:
+       Buka: https://generate-random.org/laravel-key-generator
+       Copy key: base64:_________________________________
+       Paste ke APP_KEY=
+[ ] 6. Save Changes
+
+================================================================================
+
+🎯 LANGKAH 8: SET PERMISSIONS (2 menit)
+
+[ ] 1. Folder perpus/storage
+       Klik kanan → Change Permissions → 755
+       Centang "Recurse into subdirectories"
+       
+[ ] 2. Folder perpus/bootstrap/cache
+       Klik kanan → Change Permissions → 755
+       Centang "Recurse into subdirectories"
+
+================================================================================
+
+🎯 LANGKAH 9: TEST WEBSITE (2 menit)
+
+[ ] 1. Buka: https://_________.infinityfreeapp.com
+[ ] 2. Cek halaman welcome muncul
+[ ] 3. Klik "Login"
+[ ] 4. Login dengan:
+       Email: admin@perpus.com
+       Password: password
+[ ] 5. Cek dashboard muncul
+
+================================================================================
+
+✅ SELESAI!
+
+Website Anda: https://_________.infinityfreeapp.com
+Login: admin@perpus.com / password
+
+⚠️ JANGAN LUPA:
+[ ] Ganti password default
+[ ] Bookmark URL website
+[ ] Backup database secara berkala
+
+================================================================================
+
+🆘 JIKA ADA MASALAH:
+
+Error 500:
+→ Cek .env database credentials
+→ Cek permissions storage & bootstrap/cache
+
+Halaman Blank:
+→ Cek index.php path sudah diubah
+→ Clear browser cache
+
+Database Error:
+→ Cek DB_HOST, DB_DATABASE, DB_USERNAME, DB_PASSWORD di .env
+→ Pastikan database sudah diimport
+
+CSS/JS Tidak Muncul:
+→ Cek APP_URL di .env
+→ Clear browser cache (Ctrl+F5)
+
+================================================================================
+
+📖 PANDUAN LENGKAP:
+Baca file: INFINITYFREE_STEP_BY_STEP.md
+
+🎉 SELAMAT! APLIKASI ANDA SUDAH ONLINE!
+
+================================================================================
